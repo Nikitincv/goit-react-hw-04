@@ -1,4 +1,5 @@
 import Modal from "react-modal";
+import s from "./ImageModal.module.css";
 Modal.setAppElement("#root");
 const customStyles = {
   content: {
@@ -12,14 +13,19 @@ const customStyles = {
 };
 const ImageModal = ({ modalIsOpen, closeModal, modalImage }) => {
   return (
-    <div>
+    <div className={s.imageModalBox}>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <img src={modalImage} alt="modalImage" width="70%" />
+        <img
+          className={s.imageModal}
+          src={modalImage}
+          alt="modalImage"
+          width="70%"
+        />
       </Modal>
     </div>
   );

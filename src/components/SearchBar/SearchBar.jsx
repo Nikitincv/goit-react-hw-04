@@ -1,4 +1,6 @@
 import toast from "react-hot-toast";
+import { CiSearch } from "react-icons/ci";
+import s from "./SearchBar.module.css";
 const SearchBar = ({ onSubmit }) => {
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -10,16 +12,19 @@ const SearchBar = ({ onSubmit }) => {
     e.target.reset();
   };
   return (
-    <header>
-      <form onSubmit={handelSubmit}>
+    <header className={s.header}>
+      <form className={s.headerForm} onSubmit={handelSubmit}>
+        <button className={s.headerSubmitBtn} type="submit">
+          <CiSearch />
+        </button>
         <input
+          className={s.headerInput}
           name="text"
           type="text"
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
         />
-        <button type="submit">Search</button>
       </form>
     </header>
   );

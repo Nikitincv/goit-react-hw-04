@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import { fetchImages } from "./service/api";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
